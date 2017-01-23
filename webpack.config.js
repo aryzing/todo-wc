@@ -4,8 +4,8 @@ module.exports = {
   entry: path.resolve(__dirname, 'client', 'index.js'),
   devtool: 'source-map',
   module: {
-    loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+    rules: [
+      {test: /\.js$/, exclude: /node_modules/, use: "babel-loader"}
     ]
   },
   output: {
