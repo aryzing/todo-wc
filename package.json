@@ -1,14 +1,14 @@
 {
   "name": "todo-wc",
   "version": "1.0.0",
-  "description": "",
+  "description": "Todo with Web Components",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "build-watch": "webpack -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eduard Bardají Puig",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.22.1",
