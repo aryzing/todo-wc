@@ -3,7 +3,7 @@ const initialState = {
   visibilityFilter: 'SHOW_ALL'
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return {
@@ -35,3 +35,5 @@ export const reducer = (state = initialState, action) => {
       return state
   }
 }
+
+export default reducer

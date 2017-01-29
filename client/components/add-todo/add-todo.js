@@ -1,3 +1,8 @@
+// TODO: Make alternativve version passing props
+
+import { dispatch } from '../../configureStore'
+import { createTodo } from '../../actionCreators'
+
 export default class AddTodo extends HTMLElement {
   constructor() {
     super()
@@ -15,7 +20,7 @@ export default class AddTodo extends HTMLElement {
     // })
     todoButton['data-props'] = {
       clickHandler() {
-        console.log(input.value)
+        dispatch(createTodo(input.value))
         input.value = '';
       }
     };
