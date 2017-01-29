@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build-watch": "webpack -w"
+    "build-watch": "webpack -w",
+    "serve": "live-server --port=6121 --mount='/:dist' --ignore='**/node_modules/**' --no-browser"
   },
   "keywords": [],
   "author": "Eduard Bardají Puig",
@@ -13,11 +14,9 @@
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-preset-stage-1": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-preset-stage-3": "^6.22.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "live-server": "^1.2.0",
     "webpack": "^2.2.0"
   },
   "dependencies": {
