@@ -2,7 +2,7 @@ export default class TodoButton extends HTMLElement {
   static get observedAttributes() {
     return ['text'];
   }
-  
+
   constructor() {
     super()
 
@@ -15,6 +15,9 @@ export default class TodoButton extends HTMLElement {
     let shadowRoot = this.shadowRoot;
     shadowRoot.innerHTML = `<div>${newVal || 'button'}</div>`
   }
-}
 
-// customElements.define('todo-button', TodoButton)
+  connectedCallback() {
+    this.style.display = 'inline-block'
+    this.style.padding = '0.5em'
+  }
+}
