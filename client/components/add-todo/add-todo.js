@@ -6,9 +6,13 @@ export default class AddTodo extends HTMLElement {
 
     const input = document.createElement('input')
     shadowRoot.appendChild(input)
-    
+
     const todoButton = document.createElement('todo-button')
     todoButton.setAttribute('text', 'Add')
+    todoButton.addEventListener('click', () => {
+      console.log(input.value)
+      input.value = '';
+    })
     shadowRoot.appendChild(todoButton)
   }
 
