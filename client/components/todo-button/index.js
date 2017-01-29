@@ -19,5 +19,11 @@ export default class TodoButton extends HTMLElement {
   connectedCallback() {
     this.style.display = 'inline-block'
     this.style.padding = '0.5em'
+
+    if (this['data-props']) {
+      if (this[`data-props`].clickHandler) {
+        this.addEventListener('click', this[`data-props`].clickHandler)
+      }
+    }
   }
 }
