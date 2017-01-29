@@ -1,14 +1,12 @@
-import TodoButton from '../todo-button'
-
 export default class TodoApp extends HTMLElement {
   constructor() {
     super()
 
-    // NOTE: Define elements in the constructor of the component that uses them
-    // this.style.display = 'block'
     const shadowRoot = this.attachShadow({mode: 'open'});
 
-    customElements.define('todo-button', TodoButton)
+    const addTodo = document.createElement('add-todo')
+    shadowRoot.appendChild(addTodo)
+
     const buttonAll = document.createElement('todo-button')
     buttonAll.setAttribute('text', 'All')
     buttonAll.style.display = 'inline'
@@ -29,5 +27,3 @@ export default class TodoApp extends HTMLElement {
     this.style.display = 'block'
   }
 }
-
-customElements.define('todo-app', TodoApp)

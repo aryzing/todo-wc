@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 import { reducer } from './reducer'
+import './components/customElements'
 import { TodoApp } from './components/todo-app'
 
 const store = createStore(reducer)
