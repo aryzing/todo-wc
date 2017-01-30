@@ -6,3 +6,9 @@ customElements.define('todo-app', todoApp)
 
 import todoButton from './todo-button'
 customElements.define('todo-button', todoButton)
+
+import todoList from './todo-list'
+customElements.define('todo-list', todoList)
+
+import todoListContainer from './todo-list-container'
+customElements.define('todo-list-container', todoListContainer)

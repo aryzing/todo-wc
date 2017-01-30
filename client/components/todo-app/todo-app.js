@@ -7,6 +7,9 @@ export default class TodoApp extends HTMLElement {
     const addTodo = document.createElement('add-todo')
     shadowRoot.appendChild(addTodo)
 
+    const todoListContainer = document.createElement('todo-list-container')
+    shadowRoot.appendChild(todoListContainer)
+
     const buttonAll = document.createElement('todo-button')
     buttonAll.setAttribute('text', 'All')
     buttonAll.style.display = 'inline'
