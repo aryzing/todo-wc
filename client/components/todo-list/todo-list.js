@@ -7,6 +7,7 @@ export default class TodoList extends HTMLElement {
 
   render() {
     if (this['data-props'].todos) {
+      this.shadowRoot.innerHTML = ''
       this['data-props'].todos.forEach(todo => {
         let div = document.createElement('div')
         div.innerHTML = todo.text

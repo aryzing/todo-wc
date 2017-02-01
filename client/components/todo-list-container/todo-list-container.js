@@ -9,17 +9,17 @@ export default class TodoListContainer extends HTMLElement {
   }
 
   render() {
-    const todoList = document.createElement('todo-list')
     let todos = getState().todos.filter(todo => {
       return todo.status === getState().visibilityFilter ||
       getState().visibilityFilter === 'ALL'
     })
-    todoList['data-props'] = {todos}
-    let currentTodoList = this.shadowRoot.querySelector('todo-list')
-    // console.log(currentTodoList)
+    const currentTodoList = this.shadowRoot.querySelector('todo-list')
     if (currentTodoList) {
-      this.shadowRoot.replaceChild(todoList, currentTodoList)
+      currentTodoList['data-props'] = {todos}
+      currentTodoList.render()
     } else {
+      const todoList = document.createElement('todo-list')
+      todoList['data-props'] = {todos}
       this.shadowRoot.appendChild(todoList)
     }
   }
