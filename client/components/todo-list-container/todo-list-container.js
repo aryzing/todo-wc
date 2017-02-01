@@ -1,4 +1,4 @@
-import {subscribe, getState} from '../../configureStore.js'
+import { subscribe, getState } from '../../configureStore.js'
 
 export default class TodoListContainer extends HTMLElement {
   constructor() {
@@ -10,12 +10,13 @@ export default class TodoListContainer extends HTMLElement {
 
   render() {
     const todoList = document.createElement('todo-list')
-    let props = {
-      todos: getState().todos
-    };
-    todoList['data-props'] = props
+    let todos = getState().todos.filter(todo => {
+      return todo.status === getState().visibilityFilter ||
+      getState().visibilityFilter === 'SHOW_ALL'
+    })
+    todoList['data-props'] = {todos}
     let currentTodoList = this.shadowRoot.querySelector('todo-list')
-    console.log(currentTodoList)
+    // console.log(currentTodoList)
     if (currentTodoList) {
       this.shadowRoot.replaceChild(todoList, currentTodoList)
     } else {
