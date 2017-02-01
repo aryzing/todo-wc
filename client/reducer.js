@@ -1,6 +1,6 @@
 const initialState = {
   todos: [],
-  visibilityFilter: 'SHOW_ALL'
+  visibilityFilter: 'AL'
 }
 
 const reducer = (state = initialState, action) => {

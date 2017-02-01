@@ -12,7 +12,7 @@ export default class TodoListContainer extends HTMLElement {
     const todoList = document.createElement('todo-list')
     let todos = getState().todos.filter(todo => {
       return todo.status === getState().visibilityFilter ||
-      getState().visibilityFilter === 'SHOW_ALL'
+      getState().visibilityFilter === 'ALL'
     })
     todoList['data-props'] = {todos}
     let currentTodoList = this.shadowRoot.querySelector('todo-list')
