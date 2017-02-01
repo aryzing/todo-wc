@@ -3,10 +3,9 @@ export default class TodoList extends HTMLElement {
     super()
 
     const shadowRoot = this.attachShadow({mode: 'open'});
-
   }
 
-  connectedCallback() {
+  render() {
     if (this['data-props'].todos) {
       this['data-props'].todos.forEach(todo => {
         let div = document.createElement('div')
@@ -14,5 +13,9 @@ export default class TodoList extends HTMLElement {
         this.shadowRoot.appendChild(div)
       })
     }
+  }
+
+  connectedCallback() {
+    this.render()
   }
 }
