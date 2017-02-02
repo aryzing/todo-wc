@@ -12,3 +12,6 @@ customElements.define('todo-list', todoList)
 
 import todoListContainer from './todo-list-container'
 customElements.define('todo-list-container', todoListContainer)
+
+import ListItem from './list-item'
+customElements.define('list-item', ListItem)
