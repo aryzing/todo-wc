@@ -1,6 +1,7 @@
-import { subscribe, getState } from '../../configureStore.js'
+import { subscribe, getState, dispatch } from '../../configureStore.js'
+import { setStatusPending, setStatusCompleted } from '../../actionCreators.js'
 
-export default class TodoListContainer extends HTMLElement {
+export default class TodoListContainerV2 extends HTMLElement {
   constructor() {
     super()
 
@@ -21,10 +22,18 @@ export default class TodoListContainer extends HTMLElement {
       todoItem['data-props'] = {
         todo,
         clickHandler() {
-          dispatch(/*???*/)
+          console.log('Click handler executed.')
+          // needs access to this individual todo
+          const status = todoItem['data-props'].todo.status
+          const id = todoItem['data-props'].todo.id
+          if (status === 'PENDING') {
+            dispatch(setStatusCompleted(id))
+          } else {
+            dispatch(setStatusPending(id))
+          }
         }
       }
-      // attach click handler to it
+      this.shadowRoot.appendChild(todoItem)
     })
   }
 
