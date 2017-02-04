@@ -14,10 +14,6 @@ export default class AddTodo extends HTMLElement {
 
     const todoButton = document.createElement('todo-button')
     todoButton.setAttribute('text', 'Add')
-    // todoButton.addEventListener('click', () => {
-    //   console.log(input.value)
-    //   input.value = '';
-    // })
     todoButton['data-props'] = {
       clickHandler() {
         dispatch(createTodo(input.value))

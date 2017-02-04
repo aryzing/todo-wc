@@ -22,8 +22,6 @@ export default class TodoListContainerV2 extends HTMLElement {
       todoItem['data-props'] = {
         todo,
         clickHandler() {
-          console.log('Click handler executed.')
-          // needs access to this individual todo
           const status = todoItem['data-props'].todo.status
           const id = todoItem['data-props'].todo.id
           if (status === 'PENDING') {
@@ -33,6 +31,7 @@ export default class TodoListContainerV2 extends HTMLElement {
           }
         }
       }
+      // attach it to parent
       this.shadowRoot.appendChild(todoItem)
     })
   }
