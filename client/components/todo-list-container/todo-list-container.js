@@ -1,7 +1,7 @@
 import { subscribe, getState, dispatch } from '../../configureStore.js'
 import { setStatusPending, setStatusCompleted } from '../../actionCreators.js'
 
-export default class TodoListContainerV2 extends HTMLElement {
+export default class TodoListContainer extends HTMLElement {
   constructor() {
     super()
 
